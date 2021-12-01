@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231c1b1e' fill-opacity='0.08' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #B983FF;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato',sans-serif;
+    margin: 0;
+
+}
+
+#head{
+  background-color: #FF5C58;
+}
+
+.music-container{
+    background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 0, 169, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+}
+
+
+.img-container{
+    position: relative;
+    width: 100px;
+}
+
+.img-container::after{
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, 50%);
+}       
+
+
+.img-container img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+
+    animation-play-state:paused;
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
